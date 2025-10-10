@@ -1,39 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <title>Registration Form</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Персональна сторінка - Назар Щербаченко</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-  <div class="register-container">
-    <h2>Personal Information</h2>
-    <form id="registerForm">
-      <label for="firstname">First Name:</label>
-      <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="#about">Про мене</a></li>
+                <li><a href="#skills">Навички</a></li>
+                <li><a href="#code">Приклад коду</a></li>
+                <li><a href="#education">Освіта</a></li>
+                <li><a href="#languages">Мови</a></li>
+                <li><a href="#projects">Проєкти</a></li>
+            </ul>
+        </nav>
+    </header>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <div class="container">
+        <aside class="sidebar">
+            <img src="profile.jpg" alt="Фото профілю" class="profile-pic">
+            <h2>Назар Щербаченко</h2>
+            <p class="role">Студент</p>
+            <div class="info">
+                <p><strong>Email:</strong><br> n.shcherbachenko@kitu.nau.edu.ua</p>
+                <p><strong>Телефон:</strong><br> +380974187020</p>
+                <p><strong>Дата народження:</strong><br> 04.07.2006</p>
+                <p><strong>Адреса:</strong><br> Україна</p>
+            </div>
+        </aside>
 
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" placeholder="Enter your password" required>
-
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span id="closeBtn" class="close">&times;</span>
-      <h2>Success</h2>
-      <p>Registration successful!</p>
-      <strong id="userName"></strong>
-      <br><br>
-      <button id="closeModal">CLOSE</button>
+        <main class="main">
+            <section id="about">
+                <h3>Про мене</h3>
+                <p>Я студент, який цікавиться веб-розробкою та сучасними технологіями.</p>
+            </section>
+            <section id="skills">
+                <h3>Навички</h3>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS/SCSS</li>
+                    <li>JavaScript</li>
+                    <li>Git/GitHub</li>
+                    <li>VS Code</li>
+                    <li>MS SQL Server</li>
+                </ul>
+            </section>
+            <section id="code">
+                <h3>Приклад коду</h3>
+                <pre><code>let firstname = document.getElementById("firstname").value.trim();</code></pre>                
+            </section>
+            <section id="education">
+                <h3>Освіта</h3>
+                <p><strong>Коледж:</strong> КІтУ НАУ, 2025</p>
+                <p><strong>Курси:</strong> Я майже пройшов (1,2,3,4) курси навчання на момент 2025</p>
+            </section>
+            <section id="languages">
+                <h3>Мови</h3>
+                <ul>
+                    <li>Українська (рідна)</li>
+                    <li>Англійська (A1)</li>
+                </ul>
+            </section>
+            <section id="projects">
+                <h3>Проєкти</h3>
+                <p>https://github.com/1ns1ze/null</p>
+            </section>
+        </main>
     </div>
-  </div>
-
-  <script src="index.js"></script>
 </body>
 </html>
+
 
