@@ -1,33 +1,17 @@
-const form = document.getElementById("registerForm");
-const modal = document.getElementById("modal");
-const closeBtn = document.getElementById("closeBtn");
-const closeModal = document.getElementById("closeModal");
-const userName = document.getElementById("userName");
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('main section');
+    const navLinks = document.querySelectorAll('.navbar a');
 
-form.addEventListener("submit", function(event) {
-  event.preventDefault(); 
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const id = entry.target.getAttribute('id');
+            const link = document.querySelector(`.navbar a[href="#${id}"]`);
+            if (entry.isIntersecting) {
+                navLinks.forEach(a => a.classList.remove('active'));
+                link.classList.add('active');
+            }
+        });
+    }, { threshold: 0.5 });
 
-  let firstname = document.getElementById("firstname").value.trim();
-  let email = document.getElementById("email").value.trim();
-  let password = document.getElementById("password").value.trim();
-
-  if (firstname === "" || email === "" || password === "") {
-    alert("Please fill in all fields!");
-    return;
-  }
-
-  userName.textContent = firstname;
-  modal.style.display = "block";
+    sections.forEach(section => observer.observe(section));
 });
-
-closeBtn.onclick = function() {
-  modal.style.display = "none";
-}
-closeModal.onclick = function() {
-  modal.style.display = "none";
-}
-window.onclick = function(event) {
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
-}
