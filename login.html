@@ -1,77 +1,46 @@
-<!DOCTYPE html>
-<html lang="uk">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Персональна сторінка - Назар Щербаченко</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Personal Information — Registration</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header class="navbar">
-        <nav>
-            <ul>
-                <li><a href="#about">Про мене</a></li>
-                <li><a href="#skills">Навички</a></li>
-                <li><a href="#code">Приклад коду</a></li>
-                <li><a href="#education">Освіта</a></li>
-                <li><a href="#languages">Мови</a></li>
-                <li><a href="#projects">Проєкти</a></li>
-            </ul>
-        </nav>
-    </header>
+  <main class="page">
+    <section class="card">
+      <div class="card-header">Personal Information</div>
+      <form id="infoForm" novalidate>
+        <label class="label" for="firstName">First Name:</label>
+        <input id="firstName" name="firstName" type="text" />
+        <div class="error" id="firstNameError" aria-live="polite"></div>
 
-    <div class="container">
-        <aside class="sidebar">
-            <img src="profile.jpg" alt="Фото профілю" class="profile-pic">
-            <h2>Назар Щербаченко</h2>
-            <p class="role">Студент</p>
-            <div class="info">
-                <p><strong>Email:</strong><br> n.shcherbachenko@kitu.nau.edu.ua</p>
-                <p><strong>Телефон:</strong><br> +380974187020</p>
-                <p><strong>Дата народження:</strong><br> 04.07.2006</p>
-                <p><strong>Адреса:</strong><br> Україна</p>
-            </div>
-        </aside>
+        <label class="label" for="surname">Surname:</label>
+        <input id="surname" name="surname" type="text" />
+        <div class="error" id="surnameError" aria-live="polite"></div>
 
-        <main class="main">
-            <section id="about">
-                <h3>Про мене</h3>
-                <p>Я студент, який цікавиться веб-розробкою та сучасними технологіями.</p>
-            </section>
-            <section id="skills">
-                <h3>Навички</h3>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS/SCSS</li>
-                    <li>JavaScript</li>
-                    <li>Git/GitHub</li>
-                    <li>VS Code</li>
-                    <li>MS SQL Server</li>
-                </ul>
-            </section>
-            <section id="code">
-                <h3>Приклад коду</h3>
-                <pre><code>let firstname = document.getElementById("firstname").value.trim();</code></pre>                
-            </section>
-            <section id="education">
-                <h3>Освіта</h3>
-                <p><strong>Коледж:</strong> КІтУ НАУ, 2025</p>
-                <p><strong>Курси:</strong> Я майже пройшов (1,2,3,4) курси навчання на момент 2025</p>
-            </section>
-            <section id="languages">
-                <h3>Мови</h3>
-                <ul>
-                    <li>Українська (рідна)</li>
-                    <li>Англійська (A1)</li>
-                </ul>
-            </section>
-            <section id="projects">
-                <h3>Проєкти</h3>
-                <p>https://github.com/1ns1ze/null</p>
-            </section>
-        </main>
-    </div>
+        <label class="label" for="gmail">Gmail:</label>
+        <input id="gmail" name="gmail" type="email" />
+        <div class="error" id="gmailError" aria-live="polite"></div>
+
+        <label class="label" for="password">Password:</label>
+        <input id="password" name="password" type="password" />
+        <div class="error" id="passwordError" aria-live="polite"></div>
+
+        <label class="checkbox"><input id="showPassword" type="checkbox" /> Show/Hide Password</label>
+
+        <button id="submitBtn" type="submit" class="submit">SUBMIT</button>
+      </form>
+
+      <div id="successMsg" class="success" aria-live="polite" hidden>Form submitted successfully!</div>
+    </section>
+
+    <footer class="notes">
+      <p>Real-time validation — fields update as you type. Press SUBMIT to perform final check.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
 
