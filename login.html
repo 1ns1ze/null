@@ -1,45 +1,26 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="uk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Personal Information — Registration</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Log in | ROT13</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="page">
-    <section class="card">
-      <div class="card-header">Personal Information</div>
-      <form id="infoForm" novalidate>
-        <label class="label" for="firstName">First Name:</label>
-        <input id="firstName" name="firstName" type="text" />
-        <div class="error" id="firstNameError" aria-live="polite"></div>
-
-        <label class="label" for="surname">Surname:</label>
-        <input id="surname" name="surname" type="text" />
-        <div class="error" id="surnameError" aria-live="polite"></div>
-
-        <label class="label" for="gmail">Gmail:</label>
-        <input id="gmail" name="gmail" type="email" />
-        <div class="error" id="gmailError" aria-live="polite"></div>
-
-        <label class="label" for="password">Password:</label>
-        <input id="password" name="password" type="password" />
-        <div class="error" id="passwordError" aria-live="polite"></div>
-
-        <label class="checkbox"><input id="showPassword" type="checkbox" /> Show/Hide Password</label>
-
-        <button id="submitBtn" type="submit" class="submit">SUBMIT</button>
-      </form>
-
-      <div id="successMsg" class="success" aria-live="polite" hidden>Form submitted successfully!</div>
-    </section>
-
-    <footer class="notes">
-      <p>Real-time validation — fields update as you type. Press SUBMIT to perform final check.</p>
-    </footer>
-  </main>
-
+  <div class="login-box">
+    <h2>Log in</h2>
+    <form id="form">
+      <label>Ім'я:</label>
+      <input type="text" id="name" required>
+      <label>Прізвище:</label>
+      <input type="text" id="surname" required>
+      <label>Пароль:</label>
+      <input type="password" id="password" required>
+      <div class="checkbox">
+        <input type="checkbox" id="check"> Показати пароль
+      </div>
+      <button type="submit">Увійти</button>
+    </form>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
